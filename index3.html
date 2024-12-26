@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style3.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regstration form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <form autocomplete="off" method="post" name="google-sheet">
+    <div class="form">
+        <h1> Regstration Form</h1><h4>PRASHAR COMPUTER INSTITUTE GAYGHAT</h4>
+        <div class="input">
+            <input type="text" required placeholder="Name" required class="fname" name="FirstName">
+            </div>
+
+        <div class="input">
+            <input type="text" required placeholder="Father Name" required class="input" name="FatherName">
+        </div>
+        <div class="input">
+            <input type="text" required placeholder="Mother Name" required class="input" name="MotherName">
+        </div> 
+        <div class="input">
+            <input type="email" required placeholder="E-mail" required class="input" name="E-mail">
+        </div><br> <div class="Number">
+            <input type="tex" required placeholder="Phone Number" class="input" name="Number">
+    </div> <div class="input">
+        <input  type="date" required placeholder="DOB" class="input" required name="DOB">
+    </div>
+        <div class="input">
+            <input type="text" required placeholder="Address" required class="AD" name="Address">
+        </div> <br>
+        
+    <div class="Number">
+        <!--<input type="tex" required placeholder="Course Name" class="input" name="course">-->
+</div><br>
+        <select name="degree" class="select">
+            <option name="NotSelected">Select a Course's</option>
+            <option name="CCA">CCA 3 Month's Free</option>
+            <option name="DCA">DCA 6 Month's 1700/-</option>
+            <option name="ADCA">ADCA 12 Month's 3500/-</option>
+        </select><br>
+        <div class="Number">
+            <input type="radio" required name="r1" male required value="Male">Male
+            <input type="radio" required name="r1" female required value="Female">Female
+        </div>
+        <div class="input">
+    <input type="submit" class="submit">
+    <input type="Reset" class="submit">
+    </div>
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzsm-kYwV87tW6nVgcGsZWe-D5PeMa5P0aesRbUyJ8W3Bok8mWuotP9aejyMnlPWbMakg/exec'
+        const form = document.forms['google-sheet']
+    
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..!..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</form>
+</body>
+</html>
